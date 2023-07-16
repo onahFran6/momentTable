@@ -8,10 +8,6 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathName = usePathname();
 
-  // console.log("======>>> router", {
-  //   pathName,
-  // });
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -34,13 +30,11 @@ const Navbar = () => {
     return links.map((link) => (
       <li
         key={link.path}
-        className={`hover:bg-yellow-500 rounded-xl p-1 ${isLinkActive(
-          link.path
-        )}`}
+        className={`hover:bg-yellow-500 rounded-xl  ${isLinkActive(link.path)}`}
         onClick={closeMobileMenu}
       >
         <Link href={link.path}>
-          <label className="block text-gray-300 hover:text-white py-2 cursor-pointer">
+          <label className="block text-gray-300 hover:text-white font-bold p-1 cursor-pointer">
             {link.label}
           </label>
         </Link>
@@ -49,11 +43,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-800 text-white py-4 relative z-50">
-      <div className="container px-4">
+    <nav className="bg-gray-800 text-white  relative  items-center justify-center rounded-lg">
+      <div className="container items-center justify-center">
         <div className="flex items-center justify-between">
           <div>
-            <ul className="hidden md:flex space-x-4">{renderLinks()}</ul>
+            <ul className="hidden md:flex md:flex-row space-x-4 items-center p-1 justify-center">
+              {renderLinks()}
+            </ul>
           </div>
           <div className="md:hidden">
             <button
