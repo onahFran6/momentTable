@@ -45,7 +45,7 @@ const BeamDetailsForm = () => {
               className="border border-gray-300 rounded-md w-1/2 "
               {...register("numberOfSupports", { required: true })}
             >
-              <option value="" disabled selected hidden>
+              <option value="" disabled hidden>
                 Choose
               </option>
               {numberOfSupportsOptions.map((data, index) => (
